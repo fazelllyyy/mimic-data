@@ -555,7 +555,7 @@ MIT
 
 ## Contributing
 
-Contributions are welcome! Please open an issue or pull request on [GitHub](https://github.com/fazelnotgg/mimic-data).
+Contributions are welcome! Please open an issue or pull request on [GitHub](https://github.com/fazelllyyy/mimic-data).
 
 ### Adding a New Locale
 

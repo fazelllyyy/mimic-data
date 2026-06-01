@@ -113,6 +113,42 @@ import { es_PY } from './locales/es_PY';
 import { es_US } from './locales/es_US';
 import { es_DO } from './locales/es_DO';
 
+// Import Americas & Oceania locales
+import { es_CU } from './locales/es_CU';
+import { es_SV } from './locales/es_SV';
+import { es_HN } from './locales/es_HN';
+import { es_NI } from './locales/es_NI';
+import { es_PA } from './locales/es_PA';
+import { es_UY } from './locales/es_UY';
+import { en_JM } from './locales/en_JM';
+import { en_TT } from './locales/en_TT';
+import { en_GY } from './locales/en_GY';
+import { en_BZ } from './locales/en_BZ';
+import { fr_HT } from './locales/fr_HT';
+import { nl_SR } from './locales/nl_SR';
+import { en_BS } from './locales/en_BS';
+import { en_BB } from './locales/en_BB';
+import { en_AG } from './locales/en_AG';
+import { en_DM } from './locales/en_DM';
+import { en_GD } from './locales/en_GD';
+import { en_KN } from './locales/en_KN';
+import { en_LC } from './locales/en_LC';
+import { en_VC } from './locales/en_VC';
+import { en_FJ } from './locales/en_FJ';
+import { en_PG } from './locales/en_PG';
+import { en_SB } from './locales/en_SB';
+import { en_VU } from './locales/en_VU';
+import { en_WS } from './locales/en_WS';
+import { en_TO } from './locales/en_TO';
+import { en_FM } from './locales/en_FM';
+import { sm_WS } from './locales/sm_WS';
+import { to_TO } from './locales/to_TO';
+import { en_TV } from './locales/en_TV';
+import { en_NR } from './locales/en_NR';
+import { en_MH } from './locales/en_MH';
+import { en_PW } from './locales/en_PW';
+import { en_KI } from './locales/en_KI';
+
 // Import additional locales - Asia
 import { zh_HK } from './locales/zh_HK';
 import { hi_IN } from './locales/hi_IN';
@@ -125,6 +161,91 @@ import { sw_KE } from './locales/sw_KE';
 import { sw_TZ } from './locales/sw_TZ';
 import { af_ZA } from './locales/af_ZA';
 import { pt_MZ } from './locales/pt_MZ';
+import { pt_AO } from './locales/pt_AO';
+import { en_GH } from './locales/en_GH';
+import { en_UG } from './locales/en_UG';
+import { en_ZM } from './locales/en_ZM';
+import { en_ZW } from './locales/en_ZW';
+import { en_NA } from './locales/en_NA';
+import { mg_MG } from './locales/mg_MG';
+import { en_SL } from './locales/en_SL';
+import { en_LR } from './locales/en_LR';
+import { en_GM } from './locales/en_GM';
+import { en_BW } from './locales/en_BW';
+import { en_LS } from './locales/en_LS';
+import { en_SZ } from './locales/en_SZ';
+
+// Import French-speaking Africa locales
+import { fr_CM } from './locales/fr_CM';
+import { fr_CI } from './locales/fr_CI';
+import { fr_SN } from './locales/fr_SN';
+import { fr_ML } from './locales/fr_ML';
+import { fr_NE } from './locales/fr_NE';
+import { fr_BF } from './locales/fr_BF';
+import { fr_BJ } from './locales/fr_BJ';
+import { fr_TG } from './locales/fr_TG';
+import { fr_GA } from './locales/fr_GA';
+import { rw_RW } from './locales/rw_RW';
+import { so_SO } from './locales/so_SO';
+import { am_ET } from './locales/am_ET';
+import { pt_CV } from './locales/pt_CV';
+import { pt_GW } from './locales/pt_GW';
+import { pt_ST } from './locales/pt_ST';
+
+// Import Asia locales
+import { km_KH } from './locales/km_KH';
+import { lo_LA } from './locales/lo_LA';
+import { my_MM } from './locales/my_MM';
+import { si_LK } from './locales/si_LK';
+import { mn_MN } from './locales/mn_MN';
+import { kk_KZ } from './locales/kk_KZ';
+import { ps_AF } from './locales/ps_AF';
+import { ka_GE } from './locales/ka_GE';
+import { hy_AM } from './locales/hy_AM';
+import { az_AZ } from './locales/az_AZ';
+import { ky_KG } from './locales/ky_KG';
+import { tg_TJ } from './locales/tg_TJ';
+import { tk_TM } from './locales/tk_TM';
+import { uz_UZ } from './locales/uz_UZ';
+import { dv_MV } from './locales/dv_MV';
+import { dz_BT } from './locales/dz_BT';
+
+// Import Europe locales
+import { sq_AL } from './locales/sq_AL';
+import { bs_BA } from './locales/bs_BA';
+import { mk_MK } from './locales/mk_MK';
+import { sl_SI } from './locales/sl_SI';
+import { mt_MT } from './locales/mt_MT';
+import { be_BY } from './locales/be_BY';
+import { sr_ME } from './locales/sr_ME';
+import { ro_MD } from './locales/ro_MD';
+import { el_CY } from './locales/el_CY';
+import { tr_CY } from './locales/tr_CY';
+import { ga_IE } from './locales/ga_IE';
+import { cy_GB } from './locales/cy_GB';
+import { fo_FO } from './locales/fo_FO';
+
+// Import remaining missing locales
+import { ar_PS } from './locales/ar_PS';
+import { ar_MR } from './locales/ar_MR';
+import { en_MU } from './locales/en_MU';
+import { fr_GN } from './locales/fr_GN';
+import { es_GQ } from './locales/es_GQ';
+import { en_SS } from './locales/en_SS';
+import { ar_KM } from './locales/ar_KM';
+import { ar_DJ } from './locales/ar_DJ';
+import { ti_ER } from './locales/ti_ER';
+import { fr_SC } from './locales/fr_SC';
+import { en_SC } from './locales/en_SC';
+import { ms_BN } from './locales/ms_BN';
+import { pt_TL } from './locales/pt_TL';
+import { zh_MO } from './locales/zh_MO';
+import { pt_MO } from './locales/pt_MO';
+import { ca_AD } from './locales/ca_AD';
+import { fr_MC } from './locales/fr_MC';
+import { it_SM } from './locales/it_SM';
+import { it_VA } from './locales/it_VA';
+import { en_GI } from './locales/en_GI';
 
 // Export types
 export type {
@@ -134,6 +255,8 @@ export type {
   AddressData,
   PhysicalData,
   WorkData,
+  ContactData,
+  CompanyData,
   AgeRange,
   LocaleData,
   LocaleDefinition
@@ -168,7 +291,7 @@ localeRegistry.register('es_MX', es_MX, ['mx', 'mexico']);
 localeRegistry.register('it_IT', it_IT, ['it', 'italy', 'italia']);
 localeRegistry.register('es_ES', es_ES, ['es', 'spain', 'españa']);
 localeRegistry.register('nl_NL', nl_NL, ['nl', 'netherlands', 'holland']);
-localeRegistry.register('en_CA', en_CA, ['ca', 'canada']);
+localeRegistry.register('en_CA', en_CA, ['en-ca', 'canada']);
 localeRegistry.register('en_GB', en_GB, ['gb', 'uk', 'britain']);
 localeRegistry.register('ru_RU', ru_RU, ['ru', 'russia']);
 localeRegistry.register('pl_PL', pl_PL, ['pl', 'poland', 'polska']);
@@ -252,7 +375,7 @@ localeRegistry.register('fr_CH', fr_CH, ['fr-ch', 'romandie', 'geneva', 'lausann
 localeRegistry.register('de_LI', de_LI, ['li', 'liechtenstein']);
 localeRegistry.register('de_LU', de_LU, ['de-lu', 'luxembourg-german']);
 localeRegistry.register('it_CH', it_CH, ['it-ch', 'ticino', 'swiss-italian']);
-localeRegistry.register('ca_ES', ca_ES, ['ca', 'catalonia', 'catalan']);
+localeRegistry.register('ca_ES', ca_ES, ['catalonia', 'catalan']);
 localeRegistry.register('fr_LU', fr_LU, ['fr-lu', 'luxembourg-french']);
 
 // Additional Americas locales
@@ -275,6 +398,129 @@ localeRegistry.register('sw_KE', sw_KE, ['sw-ke', 'kenya-swahili']);
 localeRegistry.register('sw_TZ', sw_TZ, ['sw-tz', 'tanzania-swahili']);
 localeRegistry.register('af_ZA', af_ZA, ['af', 'afrikaans', 'south-africa-af']);
 localeRegistry.register('pt_MZ', pt_MZ, ['mz', 'mozambique']);
+
+// Americas & Oceania locales
+localeRegistry.register('es_CU', es_CU, ['cu', 'cuba']);
+localeRegistry.register('es_SV', es_SV, ['es-sv', 'el-salvador']);
+localeRegistry.register('es_HN', es_HN, ['hn', 'honduras']);
+localeRegistry.register('es_NI', es_NI, ['ni', 'nicaragua']);
+localeRegistry.register('es_PA', es_PA, ['pa', 'panama']);
+localeRegistry.register('es_UY', es_UY, ['uy', 'uruguay']);
+localeRegistry.register('en_JM', en_JM, ['jm', 'jamaica']);
+localeRegistry.register('en_TT', en_TT, ['tt', 'trinidad', 'trinidad-and-tobago']);
+localeRegistry.register('en_GY', en_GY, ['gy', 'guyana']);
+localeRegistry.register('en_BZ', en_BZ, ['bz', 'belize']);
+localeRegistry.register('fr_HT', fr_HT, ['ht', 'haiti']);
+localeRegistry.register('nl_SR', nl_SR, ['sr', 'suriname']);
+localeRegistry.register('en_BS', en_BS, ['bs', 'bahamas']);
+localeRegistry.register('en_BB', en_BB, ['bb', 'barbados']);
+localeRegistry.register('en_AG', en_AG, ['ag', 'antigua', 'antigua-and-barbuda']);
+localeRegistry.register('en_DM', en_DM, ['dm', 'dominica']);
+localeRegistry.register('en_GD', en_GD, ['gd', 'grenada']);
+localeRegistry.register('en_KN', en_KN, ['kn', 'st-kitts', 'saint-kitts-and-nevis']);
+localeRegistry.register('en_LC', en_LC, ['lc', 'st-lucia', 'saint-lucia']);
+localeRegistry.register('en_VC', en_VC, ['vc', 'st-vincent', 'saint-vincent']);
+localeRegistry.register('en_FJ', en_FJ, ['fj', 'fiji']);
+localeRegistry.register('en_PG', en_PG, ['pg', 'papua-new-guinea']);
+localeRegistry.register('en_SB', en_SB, ['sb', 'solomon-islands']);
+localeRegistry.register('en_VU', en_VU, ['vu', 'vanuatu']);
+localeRegistry.register('en_WS', en_WS, ['ws', 'samoa', 'samoa-english']);
+localeRegistry.register('en_TO', en_TO, ['en-to', 'tonga-english']);
+localeRegistry.register('en_FM', en_FM, ['fm', 'micronesia']);
+localeRegistry.register('sm_WS', sm_WS, ['sm', 'samoan', 'samoa-samoan']);
+localeRegistry.register('to_TO', to_TO, ['to', 'tongan', 'tonga-tongan']);
+localeRegistry.register('en_TV', en_TV, ['tv', 'tuvalu']);
+localeRegistry.register('en_NR', en_NR, ['nr', 'nauru']);
+localeRegistry.register('en_MH', en_MH, ['mh', 'marshall-islands']);
+localeRegistry.register('en_PW', en_PW, ['pw', 'palau']);
+localeRegistry.register('en_KI', en_KI, ['ki', 'kiribati']);
+
+// New Africa locales
+localeRegistry.register('pt_AO', pt_AO, ['ao', 'angola']);
+localeRegistry.register('en_GH', en_GH, ['gh', 'ghana']);
+localeRegistry.register('en_UG', en_UG, ['ug', 'uganda']);
+localeRegistry.register('en_ZM', en_ZM, ['zm', 'zambia']);
+localeRegistry.register('en_ZW', en_ZW, ['zw', 'zimbabwe']);
+localeRegistry.register('en_NA', en_NA, ['na', 'namibia']);
+localeRegistry.register('mg_MG', mg_MG, ['mg', 'madagascar']);
+localeRegistry.register('en_SL', en_SL, ['sl', 'sierra-leone']);
+localeRegistry.register('en_LR', en_LR, ['lr', 'liberia']);
+localeRegistry.register('en_GM', en_GM, ['gm', 'gambia']);
+localeRegistry.register('en_BW', en_BW, ['bw', 'botswana']);
+localeRegistry.register('en_LS', en_LS, ['ls', 'lesotho']);
+localeRegistry.register('en_SZ', en_SZ, ['sz', 'eswatini']);
+
+// French-speaking Africa locales
+localeRegistry.register('fr_CM', fr_CM, ['cm', 'cameroon', 'cameroun']);
+localeRegistry.register('fr_CI', fr_CI, ['ci', 'cote-d-ivoire', 'ivory-coast']);
+localeRegistry.register('fr_SN', fr_SN, ['sn', 'senegal']);
+localeRegistry.register('fr_ML', fr_ML, ['ml', 'mali']);
+localeRegistry.register('fr_NE', fr_NE, ['ne', 'niger']);
+localeRegistry.register('fr_BF', fr_BF, ['bf', 'burkina-faso']);
+localeRegistry.register('fr_BJ', fr_BJ, ['bj', 'benin']);
+localeRegistry.register('fr_TG', fr_TG, ['tg', 'togo']);
+localeRegistry.register('fr_GA', fr_GA, ['ga', 'gabon']);
+localeRegistry.register('rw_RW', rw_RW, ['rw', 'rwanda']);
+localeRegistry.register('so_SO', so_SO, ['so', 'somalia']);
+localeRegistry.register('am_ET', am_ET, ['am', 'ethiopia']);
+localeRegistry.register('pt_CV', pt_CV, ['cv', 'cape-verde']);
+localeRegistry.register('pt_GW', pt_GW, ['gw', 'guinea-bissau']);
+localeRegistry.register('pt_ST', pt_ST, ['st', 'sao-tome', 'sao-tome-and-principe']);
+
+// Asia locales
+localeRegistry.register('km_KH', km_KH, ['kh', 'cambodia']);
+localeRegistry.register('lo_LA', lo_LA, ['la', 'laos']);
+localeRegistry.register('my_MM', my_MM, ['mm', 'myanmar', 'burma']);
+localeRegistry.register('si_LK', si_LK, ['lk', 'sri-lanka']);
+localeRegistry.register('mn_MN', mn_MN, ['mn', 'mongolia']);
+localeRegistry.register('kk_KZ', kk_KZ, ['kz', 'kazakhstan']);
+localeRegistry.register('ps_AF', ps_AF, ['af', 'afghanistan']);
+localeRegistry.register('ka_GE', ka_GE, ['ge', 'georgia']);
+localeRegistry.register('hy_AM', hy_AM, ['hy', 'armenia']);
+localeRegistry.register('az_AZ', az_AZ, ['az', 'azerbaijan']);
+localeRegistry.register('ky_KG', ky_KG, ['kg', 'kyrgyzstan']);
+localeRegistry.register('tg_TJ', tg_TJ, ['tj', 'tajikistan']);
+localeRegistry.register('tk_TM', tk_TM, ['tm', 'turkmenistan']);
+localeRegistry.register('uz_UZ', uz_UZ, ['uz', 'uzbekistan']);
+localeRegistry.register('dv_MV', dv_MV, ['mv', 'maldives']);
+localeRegistry.register('dz_BT', dz_BT, ['bt', 'bhutan']);
+
+// Europe locales
+localeRegistry.register('sq_AL', sq_AL, ['al', 'albania', 'shqiperia']);
+localeRegistry.register('bs_BA', bs_BA, ['ba', 'bosnia', 'bosnia-herzegovina']);
+localeRegistry.register('mk_MK', mk_MK, ['mk', 'north-macedonia', 'macedonia']);
+localeRegistry.register('sl_SI', sl_SI, ['si', 'slovenia']);
+localeRegistry.register('mt_MT', mt_MT, ['mt', 'malta']);
+localeRegistry.register('be_BY', be_BY, ['by', 'belarus']);
+localeRegistry.register('sr_ME', sr_ME, ['me', 'montenegro']);
+localeRegistry.register('ro_MD', ro_MD, ['md', 'moldova']);
+localeRegistry.register('el_CY', el_CY, ['el-cy', 'cyprus']);
+localeRegistry.register('tr_CY', tr_CY, ['tr-cy', 'northern-cyprus']);
+localeRegistry.register('ga_IE', ga_IE, ['ga', 'irish', 'gaeilge']);
+localeRegistry.register('cy_GB', cy_GB, ['cy', 'welsh', 'cymraeg', 'wales']);
+localeRegistry.register('fo_FO', fo_FO, ['fo', 'faroe-islands']);
+
+// Remaining missing locales
+localeRegistry.register('ar_PS', ar_PS, ['ps', 'palestine']);
+localeRegistry.register('ar_MR', ar_MR, ['mr', 'mauritania']);
+localeRegistry.register('en_MU', en_MU, ['mu', 'mauritius']);
+localeRegistry.register('fr_GN', fr_GN, ['gn', 'guinea-conakry']);
+localeRegistry.register('es_GQ', es_GQ, ['gq', 'equatorial-guinea']);
+localeRegistry.register('en_SS', en_SS, ['ss', 'south-sudan']);
+localeRegistry.register('ar_KM', ar_KM, ['km', 'comoros']);
+localeRegistry.register('ar_DJ', ar_DJ, ['dj', 'djibouti']);
+localeRegistry.register('ti_ER', ti_ER, ['er', 'eritrea']);
+localeRegistry.register('fr_SC', fr_SC, ['fr-sc', 'seychelles-french']);
+localeRegistry.register('en_SC', en_SC, ['sc', 'seychelles']);
+localeRegistry.register('ms_BN', ms_BN, ['bn', 'brunei']);
+localeRegistry.register('pt_TL', pt_TL, ['tl', 'timor-leste']);
+localeRegistry.register('zh_MO', zh_MO, ['mo', 'macau']);
+localeRegistry.register('pt_MO', pt_MO, ['pt-mo', 'macau-portuguese']);
+localeRegistry.register('ca_AD', ca_AD, ['ad', 'andorra']);
+localeRegistry.register('fr_MC', fr_MC, ['mc', 'monaco']);
+localeRegistry.register('it_SM', it_SM, ['sm', 'san-marino']);
+localeRegistry.register('it_VA', it_VA, ['va', 'vatican']);
+localeRegistry.register('en_GI', en_GI, ['gi', 'gibraltar']);
 
 /**
  * Factory function to create Mimic instance with specified locale
@@ -337,7 +583,26 @@ export const locales = {
   // Additional Asia (5)
   zh_HK, hi_IN, ne_NP, ur_PK, bn_IN,
   // Additional Africa (4)
-  sw_KE, sw_TZ, af_ZA, pt_MZ
+  sw_KE, sw_TZ, af_ZA, pt_MZ,
+  // Americas & Oceania (34)
+  es_CU, es_SV, es_HN, es_NI, es_PA, es_UY,
+  en_JM, en_TT, en_GY, en_BZ, fr_HT, nl_SR,
+  en_BS, en_BB, en_AG, en_DM, en_GD, en_KN, en_LC, en_VC,
+  en_FJ, en_PG, en_SB, en_VU, en_WS, en_TO, en_FM,
+  sm_WS, to_TO, en_TV, en_NR, en_MH, en_PW, en_KI,
+  // Additional Africa (15)
+  pt_AO, en_GH, en_UG, en_ZM, en_ZW, en_NA, mg_MG, en_SL, en_LR, en_GM, en_BW, en_LS, en_SZ,
+  fr_CM, fr_CI, fr_SN, fr_ML, fr_NE, fr_BF, fr_BJ, fr_TG, fr_GA, rw_RW, so_SO, am_ET,
+  pt_CV, pt_GW, pt_ST,
+  // Asia (16)
+  km_KH, lo_LA, my_MM, si_LK, mn_MN, kk_KZ, ps_AF, ka_GE, hy_AM, az_AZ,
+  ky_KG, tg_TJ, tk_TM, uz_UZ, dv_MV, dz_BT,
+  // Europe (13)
+  sq_AL, bs_BA, mk_MK, sl_SI, mt_MT, be_BY, sr_ME, ro_MD,
+  el_CY, tr_CY, ga_IE, cy_GB, fo_FO,
+  // Complete coverage (20)
+  ar_PS, ar_MR, en_MU, fr_GN, es_GQ, en_SS, ar_KM, ar_DJ, ti_ER, fr_SC, en_SC,
+  ms_BN, pt_TL, zh_MO, pt_MO, ca_AD, fr_MC, it_SM, it_VA, en_GI
 };
 
 // Default export

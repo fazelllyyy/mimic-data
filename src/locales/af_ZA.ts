@@ -72,6 +72,9 @@ export const af_ZA: LocaleDefinition = {
   },
 
   phoneFormats: [
+    // South Africa uses area codes 10-59 (geographic) and 60-89 (mobile, etc.)
+    // 06# codes exist but are allocated to specific mobile virtual network operators;
+    // 05# landline codes exist only in limited rural areas. Skipped for simplicity.
     '+27 1# ### ####',
     '+27 2# ### ####',
     '+27 3# ### ####',

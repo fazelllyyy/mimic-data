@@ -55,16 +55,16 @@ export const ja_JP: LocaleDefinition = {
   ],
   zipCodePattern: '###-####',
   jobTitles: [
-    'Software Engineer', 'Project Manager', 'Sales Manager', 'Accountant',
-    'HR Manager', 'Marketing Specialist', 'Data Analyst', 'Designer',
-    'Operations Manager', 'Business Analyst', 'System Administrator',
-    'Product Manager', 'Customer Support', 'Quality Assurance Engineer',
-    'Technical Writer', 'Database Administrator', 'Network Engineer'
+    'ソフトウェアエンジニア', 'プロジェクトマネージャー', '営業部長', '会計士',
+    '人事部長', 'マーケティングスペシャリスト', 'データアナリスト', 'デザイナー',
+    '運用部長', 'ビジネスアナリスト', 'システム管理者',
+    'プロダクトマネージャー', 'カスタマーサポート', '品質保証エンジニア',
+    'テクニカルライター', 'データベース管理者', 'ネットワークエンジニア'
   ],
   departments: [
-    'Engineering', 'Sales', 'Marketing', 'Human Resources', 'Finance',
-    'Operations', 'Customer Service', 'IT', 'Research and Development',
-    'Legal', 'Administration', 'Quality Assurance'
+    'エンジニアリング', '営業部', 'マーケティング部', '人事部', '財務部',
+    '運用部', 'カスタマーサービス', '情報技術部', '研究開発部',
+    '法務部', '管理部', '品質保証部'
   ],
   metricSystem: 'metric',
 

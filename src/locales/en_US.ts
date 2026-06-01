@@ -104,10 +104,10 @@ export const en_US: LocaleDefinition = {
   ],
 
   companyNames: [
-    'Acme Corp', 'Globex Corporation', 'Soylent Corp', 'Initech', 'Umbrella Corporation',
-    'Stark Industries', 'Wayne Enterprises', 'Cyberdyne Systems', 'Massive Dynamic',
-    'Hooli', 'Vehement Capital Partners', 'Bluth Company', 'Dunder Mifflin',
-    'Stark Industries', 'Wonka Industries', 'Stark Industries', 'Stark Industries'
+    'Apple Inc.', 'Microsoft Corporation', 'Amazon.com', 'Alphabet Inc.', 'Meta Platforms',
+    'JPMorgan Chase', 'Johnson & Johnson', 'Procter & Gamble', 'Bank of America',
+    'Walmart Inc.', 'The Home Depot', 'Pfizer Inc.', 'Coca-Cola Company',
+    'Netflix Inc.', 'Intel Corporation', 'Visa Inc.'
   ],
 
   industries: [

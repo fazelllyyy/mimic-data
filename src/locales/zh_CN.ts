@@ -5,7 +5,7 @@ export const zh_CN: LocaleDefinition = {
   lastNames: [
     'Wang', 'Li', 'Zhang', 'Liu', 'Chen', 'Yang', 'Huang', 'Zhao', 'Wu', 'Zhou',
     'Xu', 'Sun', 'Ma', 'Zhu', 'Hu', 'Guo', 'He', 'Gao', 'Lin', 'Luo',
-    'Zheng', 'Liang', 'Xie', 'Song', 'Tang', 'Xu', 'Deng', 'Han', 'Feng', 'Cao',
+    'Zheng', 'Liang', 'Xie', 'Song', 'Tang', 'Deng', 'Han', 'Feng', 'Cao',
     'Peng', 'Zeng', 'Xiao', 'Tian', 'Dong', 'Pan', 'Yuan', 'Cai', 'Jiang', 'Yu'
   ],
   firstNamesMale: [
@@ -40,13 +40,14 @@ export const zh_CN: LocaleDefinition = {
   ],
   zipCodePattern: '######',
   jobTitles: [
-    'Software Engineer', 'Project Manager', 'Data Analyst', 'Marketing Manager',
-    'Sales Representative', 'Accountant', 'HR Manager', 'Designer', 'Operations Manager',
-    'Business Analyst', 'Product Manager', 'System Administrator', 'Quality Engineer'
+    '软件工程师', '项目经理', '数据分析师', '市场营销经理',
+    '销售代表', '会计', '人力资源经理', '设计师', '运营经理',
+    '商业分析师', '产品经理', '系统管理员', '质量工程师',
+    '技术撰稿人', '数据库管理员', '网络工程师', 'UX设计师'
   ],
   departments: [
-    'Engineering', 'Marketing', 'Sales', 'Human Resources', 'Finance', 'Operations',
-    'Customer Service', 'IT', 'R&D', 'Legal', 'Administration'
+    '工程部', '市场部', '销售部', '人力资源部', '财务部', '运营部',
+    '客服部', '信息技术部', '研发部', '法务部', '行政部'
   ],
   metricSystem: 'metric',
 

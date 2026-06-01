@@ -7,6 +7,8 @@ export class Mimic {
   private locationCache: ReturnType<typeof this.createLocation> | null = null;
   private physicalCache: ReturnType<typeof this.createPhysical> | null = null;
   private workCache: ReturnType<typeof this.createWork> | null = null;
+  private contactCache: ReturnType<typeof this.createContact> | null = null;
+  private companyCache: ReturnType<typeof this.createCompany> | null = null;
 
   constructor(locale: LocaleDefinition) {
     this.locale = locale;
@@ -28,6 +30,8 @@ export class Mimic {
     this.locationCache = null;
     this.physicalCache = null;
     this.workCache = null;
+    this.contactCache = null;
+    this.companyCache = null;
   }
 
   /**
@@ -203,17 +207,19 @@ export class Mimic {
       height: (): PhysicalData => {
         if (self.locale.metricSystem === 'metric') {
           const height = Random.int(150, 190);
+          const weight = Random.int(45, 100);
           return {
             height,
-            weight: 0,
+            weight,
             heightUnit: 'cm',
             weightUnit: 'kg'
           };
         } else {
           const height = Random.float(4.9, 6.3, 1);
+          const weight = Random.int(100, 220);
           return {
             height,
-            weight: 0,
+            weight,
             heightUnit: 'ft',
             weightUnit: 'lb'
           };
@@ -222,17 +228,19 @@ export class Mimic {
 
       weight: (): PhysicalData => {
         if (self.locale.metricSystem === 'metric') {
+          const height = Random.int(150, 190);
           const weight = Random.int(45, 100);
           return {
-            height: 0,
+            height,
             weight,
             heightUnit: 'cm',
             weightUnit: 'kg'
           };
         } else {
+          const height = Random.float(4.9, 6.3, 1);
           const weight = Random.int(100, 220);
           return {
-            height: 0,
+            height,
             weight,
             heightUnit: 'ft',
             weightUnit: 'lb'
@@ -387,7 +395,10 @@ export class Mimic {
    * Contact generator (cached accessor)
    */
   get contact(): ReturnType<typeof this.createContact> {
-    return this.createContact();
+    if (!this.contactCache) {
+      this.contactCache = this.createContact();
+    }
+    return this.contactCache;
   }
 
   /**
@@ -449,7 +460,10 @@ export class Mimic {
    * Company generator (cached accessor)
    */
   get company(): ReturnType<typeof this.createCompany> {
-    return this.createCompany();
+    if (!this.companyCache) {
+      this.companyCache = this.createCompany();
+    }
+    return this.companyCache;
   }
 
   /**

@@ -52,60 +52,60 @@ const mimicDefault = createMimic(); // uses en_US
 
 ### Module Exports
 
-| Export                  | Description                            |
-| ----------------------- | -------------------------------------- |
-| `createMimic`         | Factory function to create Mimic      |
-| `Mimic`               | Main data generation class            |
-| `locales`             | Object with all locale definitions    |
-| `Random`              | Random number utility class           |
-| `localeRegistry`      | Locale registry for advanced usage    |
-| `getAvailableLocales()` | Returns canonical locale codes      |
-| `getAllLocaleCodes()` | Returns locale codes + aliases        |
+| Export                    | Description                        |
+| ------------------------- | ---------------------------------- |
+| `createMimic`           | Factory function to create Mimic   |
+| `Mimic`                 | Main data generation class         |
+| `locales`               | Object with all locale definitions |
+| `Random`                | Random number utility class        |
+| `localeRegistry`        | Locale registry for advanced usage |
+| `getAvailableLocales()` | Returns canonical locale codes     |
+| `getAllLocaleCodes()`   | Returns locale codes + aliases     |
 
 ### Mimic Methods
 
-| Module     | Method                                        | Description                            |
-| ---------- | --------------------------------------------- | -------------------------------------- |
-| `identity` | `firstName(gender?)`                        | Random first name (male/female/random) |
-|            | `lastName()`                                | Random last name                      |
-|            | `fullName(gender?)`                         | Full name in locale format            |
-|            | `gender()`                                  | Random gender                         |
-|            | `age(range?)`                               | Age (default 18-65)                   |
-|            | `dateOfBirth(range?)`                       | Date of birth as Date object          |
-|            | `person(gender?, range?)`                   | Complete person data                  |
-|            | `persons(count, gender?, range?)`           | Multiple persons                      |
-|            | `uniquePersons(count, gender?, range?)`     | Unique persons (by full name)         |
-| `location` | `street()`                                  | Random street name                    |
-|            | `city()`                                    | Random city                           |
-|            | `state()`                                   | Random state/province                 |
-|            | `zipCode()`                                 | Random zip/postal code                |
-|            | `fullAddress()`                             | Formatted full address                |
-|            | `address()`                                 | Complete address data                 |
-|            | `addresses(count)`                          | Multiple addresses                    |
-|            | `uniqueAddresses(count)`                    | Unique addresses                      |
-| `physical` | `height()`                                  | Height + weight (metric or imperial)  |
-|            | `weight()`                                  | Weight + height (metric or imperial)  |
-|            | `data()`                                    | Complete physical data                |
-|            | `datas(count)`                              | Multiple physical data                |
-| `work`     | `jobTitle()`                                | Random job title                      |
-|            | `department()`                              | Random department                     |
-|            | `data()`                                    | Complete work data                    |
-|            | `datas(count)`                              | Multiple work data                    |
-|            | `uniqueJobTitles(count)`                    | Unique job titles                     |
-|            | `uniqueDepartments(count)`                  | Unique departments                    |
-| `contact`  | `email(firstName?, lastName?)`              | Email address                         |
-|            | `phone()`                                   | Phone number (region-appropriate)     |
-|            | `website(name?)`                            | Website URL from company name         |
-|            | `data(firstName?, lastName?)`               | Complete contact data                 |
-|            | `datas(count)`                              | Multiple contact data                 |
-| `company`  | `name()`                                    | Company name                          |
-|            | `industry()`                                | Industry                             |
-|            | `catchPhrase()`                             | Company tagline                       |
-|            | `data()`                                    | Complete company data                 |
-|            | `datas(count)`                              | Multiple company data                 |
-| `Mimic`    | `setLocale(locale)`                         | Switch locale                         |
-|            | `generateMockEntities(count, options?)`     | Generate complete entities            |
-|            | `generateUniqueMockEntities(count, options?)` | Unique complete entities           |
+| Module       | Method                                          | Description                            |
+| ------------ | ----------------------------------------------- | -------------------------------------- |
+| `identity` | `firstName(gender?)`                          | Random first name (male/female/random) |
+|              | `lastName()`                                  | Random last name                       |
+|              | `fullName(gender?)`                           | Full name in locale format             |
+|              | `gender()`                                    | Random gender                          |
+|              | `age(range?)`                                 | Age (default 18-65)                    |
+|              | `dateOfBirth(range?)`                         | Date of birth as Date object           |
+|              | `person(gender?, range?)`                     | Complete person data                   |
+|              | `persons(count, gender?, range?)`             | Multiple persons                       |
+|              | `uniquePersons(count, gender?, range?)`       | Unique persons (by full name)          |
+| `location` | `street()`                                    | Random street name                     |
+|              | `city()`                                      | Random city                            |
+|              | `state()`                                     | Random state/province                  |
+|              | `zipCode()`                                   | Random zip/postal code                 |
+|              | `fullAddress()`                               | Formatted full address                 |
+|              | `address()`                                   | Complete address data                  |
+|              | `addresses(count)`                            | Multiple addresses                     |
+|              | `uniqueAddresses(count)`                      | Unique addresses                       |
+| `physical` | `height()`                                    | Height + weight (metric or imperial)   |
+|              | `weight()`                                    | Weight + height (metric or imperial)   |
+|              | `data()`                                      | Complete physical data                 |
+|              | `datas(count)`                                | Multiple physical data                 |
+| `work`     | `jobTitle()`                                  | Random job title                       |
+|              | `department()`                                | Random department                      |
+|              | `data()`                                      | Complete work data                     |
+|              | `datas(count)`                                | Multiple work data                     |
+|              | `uniqueJobTitles(count)`                      | Unique job titles                      |
+|              | `uniqueDepartments(count)`                    | Unique departments                     |
+| `contact`  | `email(firstName?, lastName?)`                | Email address                          |
+|              | `phone()`                                     | Phone number (region-appropriate)      |
+|              | `website(name?)`                              | Website URL from company name          |
+|              | `data(firstName?, lastName?)`                 | Complete contact data                  |
+|              | `datas(count)`                                | Multiple contact data                  |
+| `company`  | `name()`                                      | Company name                           |
+|              | `industry()`                                  | Industry                               |
+|              | `catchPhrase()`                               | Company tagline                        |
+|              | `data()`                                      | Complete company data                  |
+|              | `datas(count)`                                | Multiple company data                  |
+| `Mimic`    | `setLocale(locale)`                           | Switch locale                          |
+|              | `generateMockEntities(count, options?)`       | Generate complete entities             |
+|              | `generateUniqueMockEntities(count, options?)` | Unique complete entities               |
 
 ## Available Locales (212 Total)
 
@@ -254,6 +254,7 @@ const mimicDefault = createMimic(); // uses en_US
 ### Middle East & Africa 🌍 (75)
 
 **Middle East (19):**
+
 - `ar_SA` / `sa` / `saudi` — 🇸🇦 Saudi Arabia
 - `ar_AE` / `ae` / `uae` — 🇦🇪 UAE
 - `ar_EG` / `eg` / `egypt` — 🇪🇬 Egypt
@@ -277,6 +278,7 @@ const mimicDefault = createMimic(); // uses en_US
 - `ar_MR` / `mr` / `mauritania` — 🇲🇷 Mauritania
 
 **Sub-Saharan Africa (67):**
+
 - `en_ZA` / `za` / `south-africa` — 🇿🇦 South Africa (English)
 - `af_ZA` / `af` / `afrikaans` — 🇿🇦 South Africa (Afrikaans)
 - `en_NA` / `na` / `namibia` — 🇳🇦 Namibia

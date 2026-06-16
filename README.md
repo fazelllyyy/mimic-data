@@ -1,8 +1,8 @@
-# mimic-data
+# @fazelstudio/mimic-data
 
-[![npm version](https://img.shields.io/npm/v/mimic-data.svg)](https://www.npmjs.com/package/mimic-data)
-[![npm downloads](https://img.shields.io/npm/dt/mimic-data.svg)](https://www.npmjs.com/package/mimic-data)
-[![License](https://img.shields.io/npm/l/mimic-data.svg)](https://opensource.org/licenses/MIT)
+[![npm version](https://img.shields.io/npm/v/@fazelstudio/mimic-data.svg)](https://www.npmjs.com/package/@fazelstudio/mimic-data)
+[![npm downloads](https://img.shields.io/npm/dt/@fazelstudio/mimic-data.svg)](https://www.npmjs.com/package/@fazelstudio/mimic-data)
+[![License](https://img.shields.io/npm/l/@fazelstudio/mimic-data.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.3+-3178c6.svg)](https://www.typescriptlang.org/)
 
 A lightweight TypeScript library with zero runtime dependencies for generating realistic, locale-aware dummy data. Inspired by Faker.js, but smaller and focused on accurate localization.
@@ -18,17 +18,17 @@ A lightweight TypeScript library with zero runtime dependencies for generating r
 ## Installation
 
 ```bash
-npm install mimic-data
+npm install @fazelstudio/mimic-data
 # or
-yarn add mimic-data
+yarn add @fazelstudio/mimic-data
 # or
-pnpm add mimic-data
+pnpm add @fazelstudio/mimic-data
 ```
 
 ## Quick Start
 
 ```typescript
-import { createMimic } from 'mimic-data';
+import { createMimic } from '@fazelstudio/mimic-data';
 
 const mimic = createMimic('id_ID');
 
@@ -340,7 +340,7 @@ const mimicDefault = createMimic(); // uses en_US
 ### Basic Usage
 
 ```typescript
-import { createMimic } from 'mimic-data';
+import { createMimic } from '@fazelstudio/mimic-data';
 
 const mimic = createMimic('ja_JP');
 
@@ -354,7 +354,7 @@ console.log(mimic.location.fullAddress());
 ### Using the Mimic Class Directly
 
 ```typescript
-import { Mimic, locales } from 'mimic-data';
+import { Mimic, locales } from '@fazelstudio/mimic-data';
 
 const mimic = new Mimic(locales.de_DE);
 console.log(mimic.identity.fullName('female'));
@@ -364,7 +364,7 @@ console.log(mimic.identity.fullName('female'));
 ### Seeded Random (Reproducible Data)
 
 ```typescript
-import { createMimic, Random } from 'mimic-data';
+import { createMimic, Random } from '@fazelstudio/mimic-data';
 
 Random.seed(12345);
 
@@ -382,7 +382,7 @@ Random.unseed();
 ### Bulk Generation
 
 ```typescript
-import { createMimic } from 'mimic-data';
+import { createMimic } from '@fazelstudio/mimic-data';
 
 const mimic = createMimic('id_ID');
 
@@ -398,7 +398,7 @@ const employees = mimic.generateMockEntities(200, {
 ### Complete Employee Record
 
 ```typescript
-import { createMimic } from 'mimic-data';
+import { createMimic } from '@fazelstudio/mimic-data';
 
 const mimic = createMimic('id_ID');
 
@@ -453,7 +453,7 @@ import {
   CompanyData,
   AgeRange,
   LocaleDefinition
-} from 'mimic-data';
+} from '@fazelstudio/mimic-data';
 
 const person: PersonData = mimic.identity.person('female', { min: 25, max: 35 });
 const address: AddressData = mimic.location.address();
@@ -519,7 +519,7 @@ interface AgeRange {
 ## Random Utilities
 
 ```typescript
-import { Random } from 'mimic-data';
+import { Random } from '@fazelstudio/mimic-data';
 
 Random.seed(12345);
 
@@ -557,7 +557,7 @@ MIT
 
 ## Contributing
 
-Contributions are welcome! Please open an issue or pull request on [GitHub](https://github.com/fazelllyyy/mimic-data).
+Contributions are welcome! Please open an issue or pull request on [GitHub](https://github.com/fazelllyyy/@fazelstudio/mimic-data).
 
 ### Adding a New Locale
 

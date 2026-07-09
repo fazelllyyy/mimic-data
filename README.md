@@ -1,28 +1,28 @@
 # @fazelstudio/mimic-data
 
-[![npm version](https://img.shields.io/npm/v/@fazelstudio/mimic-data.svg)](https://www.npmjs.com/package/@fazelstudio/mimic-data)
-[![npm downloads](https://img.shields.io/npm/dt/@fazelstudio/mimic-data.svg)](https://www.npmjs.com/package/@fazelstudio/mimic-data)
-[![License](https://img.shields.io/npm/l/@fazelstudio/mimic-data.svg)](https://opensource.org/licenses/MIT)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.3+-3178c6.svg)](https://www.typescriptlang.org/)
+[![npm version](https://img.shields.io/npm/v/@fazelstudio/mimic-data.svg)](https://www.npmjs.com/package/@fazelstudio/mimic-data) [![CI](https://github.com/fazelllyyy/mimic-data/actions/workflows/ci.yml/badge.svg)](https://github.com/fazelllyyy/mimic-data/actions/workflows/ci.yml) [![License](https://img.shields.io/npm/l/@fazelstudio/mimic-data.svg)](https://opensource.org/licenses/MIT)
 
 A lightweight TypeScript library with zero runtime dependencies for generating realistic, locale-aware dummy data. Inspired by Faker.js, but smaller and focused on accurate localization.
 
 ## Features
 
 - 🌍 **212 Locales** covering 150+ countries and territories across 6 continents
-- 🪶 **Lightweight** — zero runtime dependencies (~650KB bundled with all locales)
-- 📦 **Tree-shakeable** — import only what you need
-- 🔧 **TypeScript Native** — full type safety with generics
-- 🎯 **Locale-First** — each locale has native-language data, proper address formats, and region-specific phone/zip patterns
+- 🪶 **Zero Dependencies** — no runtime dependencies, ~650KB bundled with all locales
+- 📦 **Tree-shakeable** — import only what you need, unused code is eliminated
+- 🔧 **TypeScript Native** — strict types, generics, full IDE autocompletion
+- 🎯 **Locale-First** — native-language data, proper address formats, region-specific phone/zip patterns
+- 🔁 **Reproducible** — seeded random generator for deterministic test data
 
 ## Installation
 
 ```bash
 npm install @fazelstudio/mimic-data
-# or
+```
+
+```bash
 yarn add @fazelstudio/mimic-data
-# or
 pnpm add @fazelstudio/mimic-data
+bun add @fazelstudio/mimic-data
 ```
 
 ## Quick Start
@@ -39,7 +39,7 @@ console.log(mimic.location.fullAddress());
 // "Jl. Merdeka No. 123, RT 5/RW 3, Jakarta, DKI Jakarta 12345"
 ```
 
-## API Overview
+## API Reference
 
 ### `createMimic(locale?: string): Mimic`
 
@@ -52,316 +52,96 @@ const mimicDefault = createMimic(); // uses en_US
 
 ### Module Exports
 
-| Export                    | Description                        |
-| ------------------------- | ---------------------------------- |
-| `createMimic`           | Factory function to create Mimic   |
-| `Mimic`                 | Main data generation class         |
-| `locales`               | Object with all locale definitions |
-| `Random`                | Random number utility class        |
-| `localeRegistry`        | Locale registry for advanced usage |
-| `getAvailableLocales()` | Returns canonical locale codes     |
-| `getAllLocaleCodes()`   | Returns locale codes + aliases     |
+| Export                | Description                        |
+|-----------------------|------------------------------------|
+| `createMimic`         | Factory function to create Mimic   |
+| `Mimic`               | Main data generation class         |
+| `locales`             | Object with all locale definitions |
+| `Random`              | Random number utility class        |
+| `localeRegistry`      | Locale registry for advanced usage |
+| `getAvailableLocales` | Returns canonical locale codes     |
+| `getAllLocaleCodes`   | Returns locale codes + aliases     |
 
 ### Mimic Methods
 
-| Module       | Method                                          | Description                            |
-| ------------ | ----------------------------------------------- | -------------------------------------- |
-| `identity` | `firstName(gender?)`                          | Random first name (male/female/random) |
-|              | `lastName()`                                  | Random last name                       |
-|              | `fullName(gender?)`                           | Full name in locale format             |
-|              | `gender()`                                    | Random gender                          |
-|              | `age(range?)`                                 | Age (default 18-65)                    |
-|              | `dateOfBirth(range?)`                         | Date of birth as Date object           |
-|              | `person(gender?, range?)`                     | Complete person data                   |
-|              | `persons(count, gender?, range?)`             | Multiple persons                       |
-|              | `uniquePersons(count, gender?, range?)`       | Unique persons (by full name)          |
-| `location` | `street()`                                    | Random street name                     |
-|              | `city()`                                      | Random city                            |
-|              | `state()`                                     | Random state/province                  |
-|              | `zipCode()`                                   | Random zip/postal code                 |
-|              | `fullAddress()`                               | Formatted full address                 |
-|              | `address()`                                   | Complete address data                  |
-|              | `addresses(count)`                            | Multiple addresses                     |
-|              | `uniqueAddresses(count)`                      | Unique addresses                       |
-| `physical` | `height()`                                    | Height + weight (metric or imperial)   |
-|              | `weight()`                                    | Weight + height (metric or imperial)   |
-|              | `data()`                                      | Complete physical data                 |
-|              | `datas(count)`                                | Multiple physical data                 |
-| `work`     | `jobTitle()`                                  | Random job title                       |
-|              | `department()`                                | Random department                      |
-|              | `data()`                                      | Complete work data                     |
-|              | `datas(count)`                                | Multiple work data                     |
-|              | `uniqueJobTitles(count)`                      | Unique job titles                      |
-|              | `uniqueDepartments(count)`                    | Unique departments                     |
-| `contact`  | `email(firstName?, lastName?)`                | Email address                          |
-|              | `phone()`                                     | Phone number (region-appropriate)      |
-|              | `website(name?)`                              | Website URL from company name          |
-|              | `data(firstName?, lastName?)`                 | Complete contact data                  |
-|              | `datas(count)`                                | Multiple contact data                  |
-| `company`  | `name()`                                      | Company name                           |
-|              | `industry()`                                  | Industry                               |
-|              | `catchPhrase()`                               | Company tagline                        |
-|              | `data()`                                      | Complete company data                  |
-|              | `datas(count)`                                | Multiple company data                  |
-| `Mimic`    | `setLocale(locale)`                           | Switch locale                          |
-|              | `generateMockEntities(count, options?)`       | Generate complete entities             |
-|              | `generateUniqueMockEntities(count, options?)` | Unique complete entities               |
+#### `identity`
 
-## Available Locales (212 Total)
+| Method               | Returns      | Description |
+|----------------------|-------------|-------------|
+| `firstName(gender?)`    | `string`    | Random first name (male / female / random) |
+| `lastName()`          | `string`    | Random last name |
+| `fullName(gender?)`   | `string`    | Full name in locale format |
+| `gender()`           | `Gender`    | Random gender |
+| `age(range?)`        | `number`    | Age (default 18–65) |
+| `dateOfBirth(range?)` | `Date`      | Date of birth |
+| `person(gender?, range?)` | `PersonData` | Complete person object |
+| `persons(count, gender?, range?)` | `PersonData[]` | Multiple persons |
+| `uniquePersons(count, gender?, range?)` | `PersonData[]` | Unique persons (by full name) |
 
-### Americas 🌎 (37) — unchanged
+#### `location`
 
-- `en_US` / `en` / `us` / `usa` — 🇺🇸 USA (imperial)
-- `es_US` / `es-us` — 🇺🇸 USA (Spanish)
-- `en_CA` / `en-ca` / `canada` — 🇨🇦 Canada (metric)
-- `fr_CA` / `fr-ca` — 🇨🇦 Canada (French)
-- `es_MX` / `mx` / `mexico` — 🇲🇽 Mexico
-- `pt_BR` / `pt` / `br` / `brazil` — 🇧🇷 Brazil
-- `es_AR` / `ar` / `argentina` — 🇦🇷 Argentina
-- `es_CL` / `cl` / `chile` — 🇨🇱 Chile
-- `es_CO` / `co` / `colombia` — 🇨🇴 Colombia
-- `es_PE` / `pe` / `peru` — 🇵🇪 Peru
-- `es_VE` / `ve` / `venezuela` — 🇻🇪 Venezuela
-- `es_EC` / `ec` / `ecuador` — 🇪🇨 Ecuador
-- `es_BO` / `bo` / `bolivia` — 🇧🇴 Bolivia
-- `es_PY` / `py` / `paraguay` — 🇵🇾 Paraguay
-- `es_GT` / `gt` / `guatemala` — 🇬🇹 Guatemala
-- `es_CR` / `cr` / `costa-rica` — 🇨🇷 Costa Rica
-- `es_DO` / `do` / `dominican-republic` — 🇩🇴 Dominican Republic
-- `es_CU` / `cu` / `cuba` — 🇨🇺 Cuba
-- `es_SV` / `es-sv` / `el-salvador` — 🇸🇻 El Salvador
-- `es_HN` / `hn` / `honduras` — 🇭🇳 Honduras
-- `es_NI` / `ni` / `nicaragua` — 🇳🇮 Nicaragua
-- `es_PA` / `pa` / `panama` — 🇵🇦 Panama
-- `es_UY` / `uy` / `uruguay` — 🇺🇾 Uruguay
-- `en_JM` / `jm` / `jamaica` — 🇯🇲 Jamaica
-- `en_TT` / `tt` / `trinidad-and-tobago` — 🇹🇹 Trinidad & Tobago
-- `en_GY` / `gy` / `guyana` — 🇬🇾 Guyana
-- `en_BZ` / `bz` / `belize` — 🇧🇿 Belize
-- `en_BS` / `bs` / `bahamas` — 🇧🇸 Bahamas
-- `en_BB` / `bb` / `barbados` — 🇧🇧 Barbados
-- `en_AG` / `ag` / `antigua-and-barbuda` — 🇦🇬 Antigua & Barbuda
-- `en_DM` / `dm` / `dominica` — 🇩🇲 Dominica
-- `en_GD` / `gd` / `grenada` — 🇬🇩 Grenada
-- `en_KN` / `kn` / `saint-kitts-and-nevis` — 🇰🇳 St. Kitts & Nevis
-- `en_LC` / `lc` / `saint-lucia` — 🇱🇨 St. Lucia
-- `en_VC` / `vc` / `saint-vincent` — 🇻🇨 St. Vincent & Grenadines
-- `fr_HT` / `ht` / `haiti` — 🇭🇹 Haiti
-- `nl_SR` / `sr` / `suriname` — 🇸🇷 Suriname
+| Method | Returns | Description |
+|--------|---------|-------------|
+| `street()` | `string` | Random street name |
+| `city()` | `string` | Random city |
+| `state()` | `string` | Random state / province |
+| `zipCode()` | `string` | Random zip / postal code |
+| `fullAddress()` | `string` | Formatted full address |
+| `address()` | `AddressData` | Complete address object |
+| `addresses(count)` | `AddressData[]` | Multiple addresses |
+| `uniqueAddresses(count)` | `AddressData[]` | Unique addresses |
 
-### Europe 🌍 (56)
+#### `physical`
 
-- `en_GB` / `gb` / `uk` — 🇬🇧 UK
-- `en_IE` / `ie` / `ireland` — 🇮🇪 Ireland (English)
-- `ga_IE` / `ga` / `gaeilge` — 🇮🇪 Ireland (Irish Gaelic)
-- `cy_GB` / `cy` / `wales` — 🏴󠁧󠁢󠁷󠁬󠁳󠁿 Wales (Welsh)
-- `de_DE` / `de` / `germany` — 🇩🇪 Germany
-- `de_AT` / `at` / `austria` — 🇦🇹 Austria
-- `de_CH` / `ch` / `switzerland` — 🇨🇭 Switzerland (German)
-- `fr_CH` / `fr-ch` — 🇨🇭 Switzerland (French)
-- `it_CH` / `it-ch` — 🇨🇭 Switzerland (Italian)
-- `fr_FR` / `fr` / `france` — 🇫🇷 France
-- `fr_BE` / `fr-be` — 🇧🇪 Belgium (French)
-- `nl_BE` / `be` / `belgium` — 🇧🇪 Belgium (Dutch)
-- `it_IT` / `it` / `italy` — 🇮🇹 Italy
-- `es_ES` / `es` / `spain` — 🇪🇸 Spain
-- `ca_ES` / `catalonia` / `catalan` — 🇪🇸 Spain (Catalan)
-- `pt_PT` / `portugal` — 🇵🇹 Portugal
-- `nl_NL` / `nl` / `netherlands` — 🇳🇱 Netherlands
-- `de_LU` / `de-lu` — 🇱🇺 Luxembourg (German)
-- `fr_LU` / `fr-lu` — 🇱🇺 Luxembourg (French)
-- `de_LI` / `li` / `liechtenstein` — 🇱🇮 Liechtenstein
-- `ru_RU` / `ru` / `russia` — 🇷🇺 Russia
-- `pl_PL` / `pl` / `poland` — 🇵🇱 Poland
-- `tr_TR` / `tr` / `turkey` — 🇹🇷 Turkey
-- `sv_SE` / `sv` / `se` / `sweden` — 🇸🇪 Sweden
-- `nb_NO` / `no` / `norway` — 🇳🇴 Norway
-- `da_DK` / `da` / `dk` / `denmark` — 🇩🇰 Denmark
-- `fi_FI` / `fi` / `finland` — 🇫🇮 Finland
-- `el_GR` / `el` / `gr` / `greece` — 🇬🇷 Greece
-- `cs_CZ` / `cs` / `cz` / `czech` — 🇨🇿 Czech Republic
-- `hu_HU` / `hu` / `hungary` — 🇭🇺 Hungary
-- `ro_RO` / `ro` / `romania` — 🇷🇴 Romania
-- `uk_UA` / `ua` / `ukraine` — 🇺🇦 Ukraine
-- `sk_SK` / `sk` / `slovakia` — 🇸🇰 Slovakia
-- `hr_HR` / `hr` / `croatia` — 🇭🇷 Croatia
-- `rs_RS` / `rs` / `serbia` — 🇷🇸 Serbia
-- `lt_LT` / `lt` / `lithuania` — 🇱🇹 Lithuania
-- `lv_LV` / `lv` / `latvia` — 🇱🇻 Latvia
-- `et_EE` / `ee` / `estonia` — 🇪🇪 Estonia
-- `bg_BG` / `bg` / `bulgaria` — 🇧🇬 Bulgaria
-- `is_IS` / `is` / `iceland` — 🇮🇸 Iceland
-- `sq_AL` / `al` / `albania` — 🇦🇱 Albania
-- `bs_BA` / `ba` / `bosnia-herzegovina` — 🇧🇦 Bosnia & Herzegovina
-- `mk_MK` / `mk` / `north-macedonia` — 🇲🇰 North Macedonia
-- `sl_SI` / `si` / `slovenia` — 🇸🇮 Slovenia
-- `mt_MT` / `mt` / `malta` — 🇲🇹 Malta
-- `be_BY` / `by` / `belarus` — 🇧🇾 Belarus
-- `sr_ME` / `me` / `montenegro` — 🇲🇪 Montenegro
-- `ro_MD` / `md` / `moldova` — 🇲🇩 Moldova
-- `el_CY` / `el-cy` / `cyprus` — 🇨🇾 Cyprus (Greek)
-- `tr_CY` / `tr-cy` — 🇨🇾 Cyprus (Turkish)
-- `fo_FO` / `fo` / `faroe-islands` — 🇫🇴 Faroe Islands
-- `ca_AD` / `ad` / `andorra` — 🇦🇩 Andorra
-- `fr_MC` / `mc` / `monaco` — 🇲🇨 Monaco
-- `it_SM` / `sm` / `san-marino` — 🇸🇲 San Marino
-- `it_VA` / `va` / `vatican` — 🇻🇦 Vatican City
-- `en_GI` / `gi` / `gibraltar` — 🇬🇮 Gibraltar
+| Method | Returns | Description |
+|--------|---------|-------------|
+| `height()` | `{ value, unit }` | Height (metric or imperial) |
+| `weight()` | `{ value, unit }` | Weight (metric or imperial) |
+| `data()` | `PhysicalData` | Complete physical data |
+| `datas(count)` | `PhysicalData[]` | Multiple physical data |
 
-### Asia-Pacific 🌏 (44)
+#### `work`
 
-- `zh_CN` / `zh` / `cn` / `china` — 🇨🇳 China
-- `zh_TW` / `tw` / `taiwan` — 🇹🇼 Taiwan
-- `zh_HK` / `hk` / `hongkong` — 🇭🇰 Hong Kong
-- `ja_JP` / `ja` / `jp` / `japan` — 🇯🇵 Japan
-- `ko_KR` / `ko` / `kr` / `korea` — 🇰🇷 South Korea
-- `id_ID` / `id` / `indonesia` — 🇮🇩 Indonesia
-- `ms_MY` / `ms` / `my` / `malaysia` — 🇲🇾 Malaysia
-- `th_TH` / `th` / `thailand` — 🇹🇭 Thailand
-- `vi_VN` / `vi` / `vn` / `vietnam` — 🇻🇳 Vietnam
-- `km_KH` / `kh` / `cambodia` — 🇰🇭 Cambodia
-- `lo_LA` / `la` / `laos` — 🇱🇦 Laos
-- `my_MM` / `mm` / `myanmar` — 🇲🇲 Myanmar
-- `mn_MN` / `mn` / `mongolia` — 🇲🇳 Mongolia
-- `en_SG` / `sg` / `singapore` — 🇸🇬 Singapore
-- `en_PH` / `ph` / `philippines` — 🇵🇭 Philippines
-- `en_AU` / `au` / `australia` — 🇦🇺 Australia
-- `en_NZ` / `nz` / `new-zealand` — 🇳🇿 New Zealand
-- `en_IN` / `in` / `india` — 🇮🇳 India (English)
-- `hi_IN` / `hi` / `hindi` — 🇮🇳 India (Hindi)
-- `bn_IN` / `bn-in` — 🇮🇳 India (Bengali)
-- `si_LK` / `lk` / `sri-lanka` — 🇱🇰 Sri Lanka
-- `bn_BD` / `bd` / `bangladesh` — 🇧🇩 Bangladesh
-- `ne_NP` / `np` / `nepal` — 🇳🇵 Nepal
-- `dz_BT` / `bt` / `bhutan` — 🇧🇹 Bhutan
-- `dv_MV` / `mv` / `maldives` — 🇲🇻 Maldives
-- `ur_PK` / `ur` / `urdu` — 🇵🇰 Pakistan (Urdu)
-- `en_PK` / `pk` / `pakistan` — 🇵🇰 Pakistan (English)
-- `ps_AF` / `af` / `afghanistan` — 🇦🇫 Afghanistan
-- `kk_KZ` / `kz` / `kazakhstan` — 🇰🇿 Kazakhstan
-- `ky_KG` / `kg` / `kyrgyzstan` — 🇰🇬 Kyrgyzstan
-- `tg_TJ` / `tj` / `tajikistan` — 🇹🇯 Tajikistan
-- `tk_TM` / `tm` / `turkmenistan` — 🇹🇲 Turkmenistan
-- `uz_UZ` / `uz` / `uzbekistan` — 🇺🇿 Uzbekistan
-- `ka_GE` / `ge` / `georgia` — 🇬🇪 Georgia
-- `hy_AM` / `hy` / `armenia` — 🇦🇲 Armenia
-- `az_AZ` / `az` / `azerbaijan` — 🇦🇿 Azerbaijan
-- `ms_BN` / `bn` / `brunei` — 🇧🇳 Brunei
-- `pt_TL` / `tl` / `timor-leste` — 🇹🇱 Timor-Leste
-- `zh_MO` / `mo` / `macau` — 🇲🇴 Macau (Chinese)
-- `pt_MO` / `pt-mo` / `macau-portuguese` — 🇲🇴 Macau (Portuguese)
+| Method | Returns | Description |
+|--------|---------|-------------|
+| `jobTitle()` | `string` | Random job title |
+| `department()` | `string` | Random department |
+| `data()` | `WorkData` | Complete work data |
+| `datas(count)` | `WorkData[]` | Multiple work data |
+| `uniqueJobTitles(count)` | `string[]` | Unique job titles |
+| `uniqueDepartments(count)` | `string[]` | Unique departments |
 
-### Middle East & Africa 🌍 (75)
+#### `contact`
 
-**Middle East (19):**
+| Method | Returns | Description |
+|--------|---------|-------------|
+| `email(firstName?, lastName?)` | `string` | Email address |
+| `phone()` | `string` | Phone number (region-appropriate) |
+| `website(name?)` | `string` | Website URL from company name |
+| `data(firstName?, lastName?)` | `ContactData` | Complete contact data |
+| `datas(count)` | `ContactData[]` | Multiple contact data |
 
-- `ar_SA` / `sa` / `saudi` — 🇸🇦 Saudi Arabia
-- `ar_AE` / `ae` / `uae` — 🇦🇪 UAE
-- `ar_EG` / `eg` / `egypt` — 🇪🇬 Egypt
-- `ar_MA` / `ma` / `morocco` — 🇲🇦 Morocco
-- `ar_DZ` / `dz` / `algeria` — 🇩🇿 Algeria
-- `ar_TN` / `tn` / `tunisia` — 🇹🇳 Tunisia
-- `ar_LY` / `ly` / `libya` — 🇱🇾 Libya
-- `ar_SD` / `sd` / `sudan` — 🇸🇩 Sudan
-- `ar_IQ` / `iq` / `iraq` — 🇮🇶 Iraq
-- `ar_KW` / `kw` / `kuwait` — 🇰🇼 Kuwait
-- `ar_QA` / `qa` / `qatar` — 🇶🇦 Qatar
-- `ar_BH` / `bh` / `bahrain` — 🇧🇭 Bahrain
-- `ar_OM` / `om` / `oman` — 🇴🇲 Oman
-- `ar_YE` / `ye` / `yemen` — 🇾🇪 Yemen
-- `ar_JO` / `jo` / `jordan` — 🇯🇴 Jordan
-- `ar_LB` / `lb` / `lebanon` — 🇱🇧 Lebanon
-- `ar_SY` / `sy` / `syria` — 🇸🇾 Syria
-- `he_IL` / `he` / `il` / `israel` — 🇮🇱 Israel
-- `fa_IR` / `fa` / `iran` — 🇮🇷 Iran
-- `ar_PS` / `ps` / `palestine` — 🇵🇸 Palestine
-- `ar_MR` / `mr` / `mauritania` — 🇲🇷 Mauritania
+#### `company`
 
-**Sub-Saharan Africa (67):**
+| Method | Returns | Description |
+|--------|---------|-------------|
+| `name()` | `string` | Company name |
+| `industry()` | `string` | Industry |
+| `catchPhrase()` | `string` | Company tagline |
+| `data()` | `CompanyData` | Complete company data |
+| `datas(count)` | `CompanyData[]` | Multiple company data |
 
-- `en_ZA` / `za` / `south-africa` — 🇿🇦 South Africa (English)
-- `af_ZA` / `af` / `afrikaans` — 🇿🇦 South Africa (Afrikaans)
-- `en_NA` / `na` / `namibia` — 🇳🇦 Namibia
-- `en_BW` / `bw` / `botswana` — 🇧🇼 Botswana
-- `en_ZW` / `zw` / `zimbabwe` — 🇿🇼 Zimbabwe
-- `en_ZM` / `zm` / `zambia` — 🇿🇲 Zambia
-- `en_LS` / `ls` / `lesotho` — 🇱🇸 Lesotho
-- `en_SZ` / `sz` / `eswatini` — 🇸🇿 Eswatini
-- `en_NG` / `ng` / `nigeria` — 🇳🇬 Nigeria
-- `en_GH` / `gh` / `ghana` — 🇬🇭 Ghana
-- `en_SL` / `sl` / `sierra-leone` — 🇸🇱 Sierra Leone
-- `en_LR` / `lr` / `liberia` — 🇱🇷 Liberia
-- `en_GM` / `gm` / `gambia` — 🇬🇲 Gambia
-- `en_UG` / `ug` / `uganda` — 🇺🇬 Uganda
-- `en_KE` / `ke` / `kenya` — 🇰🇪 Kenya (English)
-- `sw_KE` / `sw-ke` — 🇰🇪 Kenya (Swahili)
-- `sw_TZ` / `sw-tz` — 🇹🇿 Tanzania (Swahili)
-- `rw_RW` / `rw` / `rwanda` — 🇷🇼 Rwanda
-- `so_SO` / `so` / `somalia` — 🇸🇴 Somalia
-- `am_ET` / `am` / `ethiopia` — 🇪🇹 Ethiopia
-- `mg_MG` / `mg` / `madagascar` — 🇲🇬 Madagascar
-- `fr_CM` / `cm` / `cameroon` — 🇨🇲 Cameroon
-- `fr_CI` / `ci` / `cote-d-ivoire` — 🇨🇮 Côte d'Ivoire
-- `fr_SN` / `sn` / `senegal` — 🇸🇳 Senegal
-- `fr_ML` / `ml` / `mali` — 🇲🇱 Mali
-- `fr_NE` / `ne` / `niger` — 🇳🇪 Niger
-- `fr_BF` / `bf` / `burkina-faso` — 🇧🇫 Burkina Faso
-- `fr_BJ` / `bj` / `benin` — 🇧🇯 Benin
-- `fr_TG` / `tg` / `togo` — 🇹🇬 Togo
-- `fr_GA` / `ga` / `gabon` — 🇬🇦 Gabon
-- `pt_AO` / `ao` / `angola` — 🇦🇴 Angola
-- `pt_MZ` / `mz` / `mozambique` — 🇲🇿 Mozambique
-- `pt_CV` / `cv` / `cape-verde` — 🇨🇻 Cape Verde
-- `pt_GW` / `gw` / `guinea-bissau` — 🇬🇼 Guinea-Bissau
-- `pt_ST` / `st` / `sao-tome` — 🇸🇹 São Tomé & Príncipe
-- `ar_PS` / `ps` / `palestine` — 🇵🇸 Palestine
-- `ar_MR` / `mr` / `mauritania` — 🇲🇷 Mauritania
-- `ar_KM` / `km` / `comoros` — 🇰🇲 Comoros
-- `ar_DJ` / `dj` / `djibouti` — 🇩🇯 Djibouti
-- `en_MU` / `mu` / `mauritius` — 🇲🇺 Mauritius
-- `fr_SC` / `fr-sc` / `seychelles-french` — 🇸🇨 Seychelles (French)
-- `en_SC` / `sc` / `seychelles` — 🇸🇨 Seychelles (English)
-- `fr_GN` / `gn` / `guinea-conakry` — 🇬🇳 Guinea
-- `es_GQ` / `gq` / `equatorial-guinea` — 🇬🇶 Equatorial Guinea
-- `en_SS` / `ss` / `south-sudan` — 🇸🇸 South Sudan
-- `ti_ER` / `er` / `eritrea` — 🇪🇷 Eritrea
-- `ms_BN` / `bn` / `brunei` — 🇧🇳 Brunei
-- `pt_TL` / `tl` / `timor-leste` — 🇹🇱 Timor-Leste
-- `zh_MO` / `mo` / `macau` — 🇲🇴 Macau (Chinese)
-- `pt_MO` / `pt-mo` / `macau-portuguese` — 🇲🇴 Macau (Portuguese)
-- `ca_AD` / `ad` / `andorra` — 🇦🇩 Andorra
-- `fr_MC` / `mc` / `monaco` — 🇲🇨 Monaco
-- `it_SM` / `sm` / `san-marino` — 🇸🇲 San Marino
-- `it_VA` / `va` / `vatican` — 🇻🇦 Vatican City
-- `en_GI` / `gi` / `gibraltar` — 🇬🇮 Gibraltar
+#### `Mimic` instance-level
+
+| Method | Returns | Description |
+|--------|---------|-------------|
+| `setLocale(locale)` | `void` | Switch locale at runtime |
+| `generateMockEntities(count, options?)` | `MockEntity[]` | Generate complete entities |
+| `generateUniqueMockEntities(count, options?)` | `MockEntity[]` | Unique complete entities |
 
 ## Usage Examples
 
-### Basic Usage
-
-```typescript
-import { createMimic } from '@fazelstudio/mimic-data';
-
-const mimic = createMimic('ja_JP');
-
-console.log(mimic.identity.fullName());
-// "Tanaka Kenji"
-
-console.log(mimic.location.fullAddress());
-// "〒123-4567 Tokyo, Yokohama, Chuo-dori 2-5-10"
-```
-
-### Using the Mimic Class Directly
-
-```typescript
-import { Mimic, locales } from '@fazelstudio/mimic-data';
-
-const mimic = new Mimic(locales.de_DE);
-console.log(mimic.identity.fullName('female'));
-// "Maria Müller"
-```
-
-### Seeded Random (Reproducible Data)
+### Seeded Random (Deterministic Data)
 
 ```typescript
 import { createMimic, Random } from '@fazelstudio/mimic-data';
@@ -391,15 +171,13 @@ const addresses = mimic.location.uniqueAddresses(50);
 
 const employees = mimic.generateMockEntities(200, {
   gender: 'female',
-  ageRange: { min: 20, max: 40 }
+  ageRange: { min: 20, max: 40 },
 });
 ```
 
 ### Complete Employee Record
 
 ```typescript
-import { createMimic } from '@fazelstudio/mimic-data';
-
 const mimic = createMimic('id_ID');
 
 const employee = {
@@ -408,7 +186,7 @@ const employee = {
   ...mimic.physical.data(),
   ...mimic.work.data(),
   ...mimic.contact.data(),
-  ...mimic.company.data()
+  ...mimic.company.data(),
 };
 
 console.log(employee);
@@ -442,7 +220,7 @@ console.log(employee);
 ## TypeScript Types
 
 ```typescript
-import {
+import type {
   Gender,
   MetricSystem,
   PersonData,
@@ -452,15 +230,10 @@ import {
   ContactData,
   CompanyData,
   AgeRange,
-  LocaleDefinition
+  LocaleDefinition,
 } from '@fazelstudio/mimic-data';
 
-const person: PersonData = mimic.identity.person('female', { min: 25, max: 35 });
-const address: AddressData = mimic.location.address();
-const physical: PhysicalData = mimic.physical.data();
-const work: WorkData = mimic.work.data();
-const contact: ContactData = mimic.contact.data();
-const company: CompanyData = mimic.company.data();
+const person: PersonData = mimic.identity.person('female');
 ```
 
 ### Type Definitions
@@ -523,25 +296,41 @@ import { Random } from '@fazelstudio/mimic-data';
 
 Random.seed(12345);
 
-Random.int(1, 100);
-Random.float(1.5, 10.5, 2);
-Random.boolean();
-Random.pick(['a', 'b', 'c']);
-Random.shuffle([1, 2, 3, 4, 5]);
-Random.multiple(() => Random.int(1, 100), 10);
-Random.unique(() => Random.int(1, 1000), 20);
+Random.int(1, 100);       // random integer
+Random.float(1.5, 10.5, 2); // random float with decimal places
+Random.boolean();         // true / false
+Random.pick(['a', 'b']);  // random element
+Random.shuffle([1, 2, 3]); // shuffled array copy
+Random.multiple(fn, 10);  // generate multiple values
+Random.unique(fn, 20);    // generate unique values
 ```
+
+## Available Locales
+
+### Americas (37)
+`en_US`, `es_US`, `en_CA`, `fr_CA`, `es_MX`, `pt_BR`, `es_AR`, `es_CL`, `es_CO`, `es_PE`, `es_VE`, `es_EC`, `es_BO`, `es_PY`, `es_GT`, `es_CR`, `es_DO`, `es_CU`, `es_SV`, `es_HN`, `es_NI`, `es_PA`, `es_UY`, `en_JM`, `en_TT`, `en_GY`, `en_BZ`, `en_BS`, `en_BB`, `en_AG`, `en_DM`, `en_GD`, `en_KN`, `en_LC`, `en_VC`, `fr_HT`, `nl_SR`
+
+### Europe (56)
+`en_GB`, `en_IE`, `ga_IE`, `cy_GB`, `de_DE`, `de_AT`, `de_CH`, `fr_CH`, `it_CH`, `fr_FR`, `fr_BE`, `nl_BE`, `it_IT`, `es_ES`, `ca_ES`, `pt_PT`, `nl_NL`, `de_LU`, `fr_LU`, `de_LI`, `ru_RU`, `pl_PL`, `tr_TR`, `sv_SE`, `nb_NO`, `da_DK`, `fi_FI`, `el_GR`, `cs_CZ`, `hu_HU`, `ro_RO`, `uk_UA`, `sk_SK`, `hr_HR`, `rs_RS`, `lt_LT`, `lv_LV`, `et_EE`, `bg_BG`, `is_IS`, `sq_AL`, `bs_BA`, `mk_MK`, `sl_SI`, `mt_MT`, `be_BY`, `sr_ME`, `ro_MD`, `el_CY`, `tr_CY`, `fo_FO`, `ca_AD`, `fr_MC`, `it_SM`, `it_VA`, `en_GI`
+
+### Asia-Pacific (44)
+`zh_CN`, `zh_TW`, `zh_HK`, `ja_JP`, `ko_KR`, `id_ID`, `ms_MY`, `th_TH`, `vi_VN`, `km_KH`, `lo_LA`, `my_MM`, `mn_MN`, `en_SG`, `en_PH`, `en_AU`, `en_NZ`, `en_IN`, `hi_IN`, `bn_IN`, `si_LK`, `bn_BD`, `ne_NP`, `dz_BT`, `dv_MV`, `ur_PK`, `en_PK`, `ps_AF`, `kk_KZ`, `ky_KG`, `tg_TJ`, `tk_TM`, `uz_UZ`, `ka_GE`, `hy_AM`, `az_AZ`, `ms_BN`, `pt_TL`, `zh_MO`, `pt_MO`
+
+### Middle East & Africa (75)
+`ar_SA`, `ar_AE`, `ar_EG`, `ar_MA`, `ar_DZ`, `ar_TN`, `ar_LY`, `ar_SD`, `ar_IQ`, `ar_KW`, `ar_QA`, `ar_BH`, `ar_OM`, `ar_YE`, `ar_JO`, `ar_LB`, `ar_SY`, `he_IL`, `fa_IR`, `ar_PS`, `ar_MR`, `ar_KM`, `ar_DJ`, `en_ZA`, `af_ZA`, `en_NA`, `en_BW`, `en_ZW`, `en_ZM`, `en_LS`, `en_SZ`, `en_NG`, `en_GH`, `en_SL`, `en_LR`, `en_GM`, `en_UG`, `en_KE`, `sw_KE`, `sw_TZ`, `rw_RW`, `so_SO`, `am_ET`, `mg_MG`, `fr_CM`, `fr_CI`, `fr_SN`, `fr_ML`, `fr_NE`, `fr_BF`, `fr_BJ`, `fr_TG`, `fr_GA`, `pt_AO`, `pt_MZ`, `pt_CV`, `pt_GW`, `pt_ST`, `en_MU`, `fr_SC`, `en_SC`, `fr_GN`, `es_GQ`, `en_SS`, `ti_ER`
+
+> Every locale has multiple aliases (e.g. `en_US` / `en` / `us` / `usa`). See [the source](src/locales/) for the full list.
 
 ## Development
 
 ```bash
-# Install dependencies
+# Install
 npm install
 
 # Build
 npm run build
 
-# Development mode (watch)
+# Watch mode
 npm run dev
 
 # Run tests
@@ -549,59 +338,27 @@ npm test
 
 # Type check
 npm run type-check
+
+# Lint & format
+npm run lint
+npm run format
 ```
+
+## Migrating from Faker.js
+
+| Faker.js                   | mimic-data                   |
+|----------------------------|------------------------------|
+| `faker.person.fullName()`  | `mimic.identity.fullName()`  |
+| `faker.location.street()`  | `mimic.location.street()`    |
+| `faker.phone.number()`     | `mimic.contact.phone()`      |
+| `faker.company.name()`     | `mimic.company.name()`       |
+
+mimic-data focuses on accurate localization and zero dependencies — if you need those, it's a natural fit.
 
 ## License
 
-MIT
+MIT © [Fazel](https://github.com/fazelllyyy)
 
-## Contributing
+---
 
-Contributions are welcome! Please open an issue or pull request on [GitHub](https://github.com/fazelllyyy/@fazelstudio/mimic-data).
-
-### Adding a New Locale
-
-1. **Create a locale file** at `src/locales/xx_XX.ts`
-2. **Implement the `LocaleDefinition`** interface
-3. **Import and register** in `src/index.ts`
-
-```typescript
-// 1. Create file: src/locales/es_ES.ts
-import { LocaleDefinition } from '../types';
-import { Random } from '../core/random';
-
-export const es_ES: LocaleDefinition = {
-  firstNamesMale: ['Carlos', 'José', 'Antonio'],
-  firstNamesFemale: ['María', 'Carmen', 'Ana'],
-  lastNames: ['García', 'Fernández', 'López'],
-  streets: ['Calle Mayor', 'Avenida Castellana'],
-  cities: ['Madrid', 'Barcelona', 'Valencia'],
-  states: ['Madrid', 'Cataluña', 'Andalucía'],
-  zipCodePattern: '#####',
-  jobTitles: ['Ingeniero de Software'],
-  departments: ['Ingeniería', 'Marketing'],
-  metricSystem: 'metric',
-  formatFullName(firstName, lastName) {
-    return `${firstName} ${lastName}`;
-  },
-  formatAddress(street, city, state, zipCode) {
-    return `${street} ${Random.int(1, 200)}, ${zipCode} ${city}`;
-  },
-  generateZipCode() {
-    return String(Random.int(10000, 99999));
-  }
-};
-
-// 2. Register in src/index.ts
-import { es_ES } from './locales/es_ES';
-localeRegistry.register('es_ES', es_ES, ['es', 'spain', 'españa']);
-```
-
-## Acknowledgments
-
-Inspired by libraries like Faker.js, with a focus on:
-
-- Zero runtime dependencies
-- Accurate localization for each region
-- Smaller bundle size through tree-shaking
-- TypeScript-first design with full type safety
+**mimic-data** — Realistic dummy data, localized. Everywhere.

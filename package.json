@@ -16,13 +16,22 @@
   "files": [
     "dist"
   ],
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
     "test": "vitest",
     "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage",
     "type-check": "tsc --noEmit",
-    "prepublishOnly": "npm run build"
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "format:check": "prettier --check \"src/**/*.ts\"",
+    "prepublishOnly": "npm run build",
+    "prepare": "husky || true"
   },
   "keywords": [
     "fake-data",
@@ -36,12 +45,21 @@
     "mimic",
     "realistic-data"
   ],
-  "author": "Fazel",
+  "author": {
+    "name": "Fazel",
+    "email": "zulfazlilsm@gmail.com",
+    "url": "https://github.com/fazelllyyy"
+  },
   "license": "MIT",
   "devDependencies": {
+    "@stylistic/eslint-plugin": "^2.13.0",
     "@types/node": "^20.10.0",
+    "eslint": "^9.39.4",
+    "husky": "^9.1.7",
+    "prettier": "^3.9.4",
     "tsup": "^8.0.1",
     "typescript": "^5.3.3",
+    "typescript-eslint": "^8.63.0",
     "vitest": "^1.1.0"
   },
   "repository": {

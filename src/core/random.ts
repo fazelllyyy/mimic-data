@@ -103,7 +103,7 @@ export class Random {
     if (results.size < count) {
       throw new Error(
         `Could not generate ${count} unique values after ${maxAttempts} attempts. ` +
-        'The generator may have insufficient variety.'
+        'The generator may have insufficient variety.',
       );
     }
 

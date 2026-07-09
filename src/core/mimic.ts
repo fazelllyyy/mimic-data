@@ -97,7 +97,7 @@ export class Mimic {
           fullName: self.locale.formatFullName(firstName, lastName),
           gender: genderChoice,
           age: ageVal,
-          dateOfBirth: new Date(birthYear, month, day)
+          dateOfBirth: new Date(birthYear, month, day),
         };
       },
 
@@ -113,7 +113,7 @@ export class Mimic {
        */
       uniquePersons: (count: number, gender?: Gender, ageRange?: AgeRange): PersonData[] => {
         return Random.unique(() => self.identity.person(gender, ageRange), count);
-      }
+      },
     };
   }
 
@@ -168,7 +168,7 @@ export class Mimic {
           city,
           state,
           zipCode,
-          fullAddress: self.locale.formatAddress(street, city, state, zipCode)
+          fullAddress: self.locale.formatAddress(street, city, state, zipCode),
         };
       },
 
@@ -184,7 +184,7 @@ export class Mimic {
        */
       uniqueAddresses: (count: number): AddressData[] => {
         return Random.unique(() => self.location.address(), count);
-      }
+      },
     };
   }
 
@@ -212,7 +212,7 @@ export class Mimic {
             height,
             weight,
             heightUnit: 'cm',
-            weightUnit: 'kg'
+            weightUnit: 'kg',
           };
         } else {
           const height = Random.float(4.9, 6.3, 1);
@@ -221,7 +221,7 @@ export class Mimic {
             height,
             weight,
             heightUnit: 'ft',
-            weightUnit: 'lb'
+            weightUnit: 'lb',
           };
         }
       },
@@ -234,7 +234,7 @@ export class Mimic {
             height,
             weight,
             heightUnit: 'cm',
-            weightUnit: 'kg'
+            weightUnit: 'kg',
           };
         } else {
           const height = Random.float(4.9, 6.3, 1);
@@ -243,7 +243,7 @@ export class Mimic {
             height,
             weight,
             heightUnit: 'ft',
-            weightUnit: 'lb'
+            weightUnit: 'lb',
           };
         }
       },
@@ -254,14 +254,14 @@ export class Mimic {
             height: Random.int(150, 190),
             weight: Random.int(45, 100),
             heightUnit: 'cm',
-            weightUnit: 'kg'
+            weightUnit: 'kg',
           };
         } else {
           return {
             height: Random.float(4.9, 6.3, 1),
             weight: Random.int(100, 220),
             heightUnit: 'ft',
-            weightUnit: 'lb'
+            weightUnit: 'lb',
           };
         }
       },
@@ -271,7 +271,7 @@ export class Mimic {
        */
       datas: (count: number): PhysicalData[] => {
         return Random.multiple(() => self.physical.data(), count);
-      }
+      },
     };
   }
 
@@ -302,7 +302,7 @@ export class Mimic {
       data: (): WorkData => {
         return {
           jobTitle: Random.pick(self.locale.jobTitles),
-          department: Random.pick(self.locale.departments)
+          department: Random.pick(self.locale.departments),
         };
       },
 
@@ -325,7 +325,7 @@ export class Mimic {
        */
       uniqueDepartments: (count: number): string[] => {
         return Random.unique(() => self.work.department(), count);
-      }
+      },
     };
   }
 
@@ -378,7 +378,7 @@ export class Mimic {
         return {
           email: self.contact.email(firstName, lastName),
           phone: self.contact.phone(),
-          website: self.contact.website()
+          website: self.contact.website(),
         };
       },
 
@@ -387,7 +387,7 @@ export class Mimic {
        */
       datas: (count: number): ContactData[] => {
         return Random.multiple(() => self.contact.data(), count);
-      }
+      },
     };
   }
 
@@ -424,7 +424,7 @@ export class Mimic {
         const industries = [
           'Technology', 'Finance', 'Healthcare', 'Education', 'Retail',
           'Manufacturing', 'Media', 'Telecommunications', 'Energy', 'Transportation',
-          'Real Estate', 'Consulting', 'Hospitality', 'Automotive', 'Aerospace'
+          'Real Estate', 'Consulting', 'Hospitality', 'Automotive', 'Aerospace',
         ];
         return Random.pick(industries);
       },
@@ -443,7 +443,7 @@ export class Mimic {
         return {
           name: self.company.name(),
           industry: self.company.industry(),
-          catchPhrase: self.company.catchPhrase()
+          catchPhrase: self.company.catchPhrase(),
         };
       },
 
@@ -452,7 +452,7 @@ export class Mimic {
        */
       datas: (count: number): CompanyData[] => {
         return Random.multiple(() => self.company.data(), count);
-      }
+      },
     };
   }
 
@@ -481,12 +481,12 @@ export class Mimic {
     ageRange?: AgeRange;
   }): Array<PersonData & AddressData & PhysicalData & WorkData> {
     const { gender, ageRange } = options || {};
-    
+
     return Random.multiple(() => ({
       ...this.identity.person(gender, ageRange),
       ...this.location.address(),
       ...this.physical.data(),
-      ...this.work.data()
+      ...this.work.data(),
     }), count);
   }
 
@@ -498,12 +498,12 @@ export class Mimic {
     ageRange?: AgeRange;
   }): Array<PersonData & AddressData & PhysicalData & WorkData> {
     const { gender, ageRange } = options || {};
-    
+
     return Random.unique(() => ({
       ...this.identity.person(gender, ageRange),
       ...this.location.address(),
       ...this.physical.data(),
-      ...this.work.data()
+      ...this.work.data(),
     }), count);
   }
 }

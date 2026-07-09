@@ -36,7 +36,7 @@ describe('Mimic - Identity', () => {
   it('should generate complete person data', () => {
     const mimic = createMimic('id_ID');
     const person = mimic.identity.person('male', { min: 25, max: 40 });
-    
+
     expect(person).toHaveProperty('firstName');
     expect(person).toHaveProperty('lastName');
     expect(person).toHaveProperty('fullName');
@@ -74,7 +74,7 @@ describe('Mimic - Location', () => {
   it('should generate complete address data', () => {
     const mimic = createMimic('en_US');
     const address = mimic.location.address();
-    
+
     expect(address).toHaveProperty('street');
     expect(address).toHaveProperty('city');
     expect(address).toHaveProperty('state');
@@ -103,7 +103,7 @@ describe('Mimic - Physical', () => {
   it('should generate complete physical data', () => {
     const mimic = createMimic('id_ID');
     const physical = mimic.physical.data();
-    
+
     expect(physical).toHaveProperty('height');
     expect(physical).toHaveProperty('weight');
     expect(physical).toHaveProperty('heightUnit');
@@ -131,7 +131,7 @@ describe('Mimic - Work', () => {
   it('should generate complete work data', () => {
     const mimic = createMimic('en_US');
     const work = mimic.work.data();
-    
+
     expect(work).toHaveProperty('jobTitle');
     expect(work).toHaveProperty('department');
   });

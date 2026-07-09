@@ -17,10 +17,10 @@ class LocaleRegistry {
   register(
     code: string,
     definition: LocaleDefinition,
-    aliasesArray: string[] = []
+    aliasesArray: string[] = [],
   ): void {
     this.locales.set(code, definition);
-    
+
     // Register aliases
     for (const alias of aliasesArray) {
       this.aliases.set(alias, code);
@@ -37,13 +37,13 @@ class LocaleRegistry {
     if (this.locales.has(code)) {
       return this.locales.get(code);
     }
-    
+
     // Check aliases
     const mainCode = this.aliases.get(code);
     if (mainCode) {
       return this.locales.get(mainCode);
     }
-    
+
     return undefined;
   }
 
@@ -74,7 +74,7 @@ class LocaleRegistry {
   getAllCodes(): string[] {
     return [
       ...this.getAvailableLocales(),
-      ...this.getAvailableAliases()
+      ...this.getAvailableAliases(),
     ];
   }
 }

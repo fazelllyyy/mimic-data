@@ -259,7 +259,7 @@ export type {
   CompanyData,
   AgeRange,
   LocaleData,
-  LocaleDefinition
+  LocaleDefinition,
 } from './types';
 
 // Export core classes
@@ -527,15 +527,15 @@ localeRegistry.register('en_GI', en_GI, ['gi', 'gibraltar']);
  */
 export function createMimic(locale: string = 'en_US'): Mimic {
   const localeDefinition = localeRegistry.get(locale);
-  
+
   if (!localeDefinition) {
     const available = localeRegistry.getAllCodes().join(', ');
     throw new Error(
       `Locale '${locale}' not found.\n` +
-      `Available locales: ${available}`
+      `Available locales: ${available}`,
     );
   }
-  
+
   return new Mimic(localeDefinition);
 }
 
@@ -602,7 +602,7 @@ export const locales = {
   el_CY, tr_CY, ga_IE, cy_GB, fo_FO,
   // Complete coverage (20)
   ar_PS, ar_MR, en_MU, fr_GN, es_GQ, en_SS, ar_KM, ar_DJ, ti_ER, fr_SC, en_SC,
-  ms_BN, pt_TL, zh_MO, pt_MO, ca_AD, fr_MC, it_SM, it_VA, en_GI
+  ms_BN, pt_TL, zh_MO, pt_MO, ca_AD, fr_MC, it_SM, it_VA, en_GI,
 };
 
 // Default export

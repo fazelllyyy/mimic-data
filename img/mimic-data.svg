@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#0F172A" />
+  
+  <defs>
+    <linearGradient id="md-grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F472B6" />
+      <stop offset="100%" stop-color="#DB2777" />
+    </linearGradient>
+    <linearGradient id="md-grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#3B82F6" />
+    </linearGradient>
+  </defs>
+  
+  <path d="M 140 180 C 140 140, 260 140, 260 180 C 260 220, 140 220, 140 180 Z" fill="url(#md-grad1)" />
+  <path d="M 140 180 L 140 330 C 140 370, 260 370, 260 330 L 260 180" fill="url(#md-grad1)" opacity="0.85" />
+  <path d="M 140 255 C 140 295, 260 295, 260 255" fill="none" stroke="#9D174D" stroke-width="12" opacity="0.4" />
+  
+  <path d="M 270 230 C 270 190, 390 190, 390 230 C 390 270, 270 270, 270 230 Z" fill="none" stroke="url(#md-grad2)" stroke-width="16" stroke-dasharray="16, 12" />
+  <path d="M 270 230 L 270 380 C 270 420, 390 420, 390 380 L 390 230" fill="none" stroke="url(#md-grad2)" stroke-width="16" stroke-dasharray="16, 12" />
+  <path d="M 270 305 C 270 345, 390 345, 390 305" fill="none" stroke="url(#md-grad2)" stroke-width="16" stroke-dasharray="16, 12" />
+</svg>

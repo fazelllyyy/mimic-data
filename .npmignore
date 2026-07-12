@@ -1,0 +1,46 @@
+# Source files
+src/
+examples/
+*.test.ts
+*.spec.ts
+
+# Config files
+tsconfig.json
+tsup.config.ts
+vitest.config.ts
+eslint.config.mjs
+.prettierrc
+.gitignore
+.npmrc
+
+# Lint / format cache
+.eslintcache
+.prettiercache
+
+# Documentation (keep README.md)
+CONTRIBUTING.md
+CHANGELOG.md
+CODE_OF_CONDUCT.md
+SECURITY.md
+COMPREHENSIVE_GUIDE.md
+LOCALE_SUMMARY.md
+FINAL_SUMMARY.md
+
+# Development
+node_modules/
+.vscode/
+.idea/
+*.log
+coverage/
+.cache/
+
+# Build artifacts (keep dist/)
+*.tsbuildinfo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.github/
